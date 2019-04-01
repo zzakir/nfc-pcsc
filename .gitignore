@@ -19,5 +19,3 @@ Desktop.ini
 dist/
 
 *.log
-
-yarn.lock
