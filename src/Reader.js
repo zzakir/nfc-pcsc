@@ -71,8 +71,7 @@ class Reader extends EventEmitter {
 		// TODO: better detecting card types
 		if (atr[5] && atr[5] === 0x4f) {
 			return TAG_ISO_14443_3;
-		}
-		else {
+		} else {
 			return TAG_ISO_14443_4;
 		}
 
@@ -109,19 +108,13 @@ class Reader extends EventEmitter {
 
 		if (logger) {
 			this.logger = logger;
-		}
-		else {
+		} else {
 			this.logger = {
-				log: function () {
-				},
-				debug: function () {
-				},
-				info: function () {
-				},
-				warn: function () {
-				},
-				error: function () {
-				},
+				log: function () {},
+				debug: function () {},
+				info: function () {},
+				warn: function () {},
+				error: function () {},
 			};
 		}
 
@@ -149,7 +142,9 @@ class Reader extends EventEmitter {
 					this.logger.debug('card removed');
 
 					if (this.card) {
-						this.emit('card.off', { ...this.card });
+						this.emit('card.off', {
+							...this.card
+						});
 					}
 
 					try {
@@ -165,8 +160,7 @@ class Reader extends EventEmitter {
 
 					}
 
-				}
-				else if ((changes & this.reader.SCARD_STATE_PRESENT) && (status.state & this.reader.SCARD_STATE_PRESENT)) {
+				} else if ((changes & this.reader.SCARD_STATE_PRESENT) && (status.state & this.reader.SCARD_STATE_PRESENT)) {
 
 					const atr = status.atr;
 
@@ -185,7 +179,9 @@ class Reader extends EventEmitter {
 						await this.connect();
 
 						if (!this.autoProcessing) {
-							this.emit('card', { ...this.card });
+							this.emit('card', {
+								...this.card
+							});
 							return;
 						}
 
@@ -518,7 +514,7 @@ class Reader extends EventEmitter {
 			return Promise.all(commands)
 				.then(values => {
 					// console.log(values);
-					return Buffer.concat(values, length);
+					return Buffer.concat([values, length]);
 				});
 
 		}
@@ -529,7 +525,7 @@ class Reader extends EventEmitter {
 			0xb0, // Ins
 			(blockNumber >> 8) & 0xFF, // P1
 			blockNumber & 0xFF, // P2: Block Number
-			length,  // Le: Number of Bytes to Read (Maximum 16 bytes)
+			length, // Le: Number of Bytes to Read (Maximum 16 bytes)
 		]);
 
 		let response = null;
@@ -712,7 +708,9 @@ class Reader extends EventEmitter {
 
 			this.card.uid = uid;
 
-			this.emit('card', { ...this.card });
+			this.emit('card', {
+				...this.card
+			});
 
 
 		} catch (err) {
