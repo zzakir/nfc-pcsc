@@ -398,12 +398,11 @@
   dependencies:
     arrify "^1.0.1"
 
-"@pokusew/pcsclite@git://github.com/zzakir/node-pcsclite.git#master":
-  version "0.5.0"
-  resolved "git://github.com/zzakir/node-pcsclite.git#cc4921b7158639e1f93bcb97b21902c6a3b5ca74"
+"@pokusew/pcsclite@git://github.com/philoliver/node-pcsclite.git#master":
+  version "0.4.18"
+  resolved "git://github.com/philoliver/node-pcsclite.git#14bb509db57e6cdefea8dfa3d54a7c620e2b145e"
   dependencies:
-    buffertools "^2.1.2"
-    nan "^2.2.1"
+    nan "^2.7.0"
     node-loader "git://github.com/gch1p/node-loader.git#master"
 
 abbrev@1:
@@ -721,11 +720,6 @@ buffer-from@^1.0.0:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/buffer-from/-/buffer-from-1.1.1.tgz#32713bc028f75c02fdb710d7c7bcec1f2c6070ef"
   integrity sha512-MQcXEUbCKtEo7bhqEs6560Hyd4XaovZlO/k9V3hjVUF/zwW7KBVdSK4gIt/bzwS9MbR5qob+F5jusZsb0YQK2A==
-
-buffertools@^2.1.2:
-  version "2.1.6"
-  resolved "https://registry.yarnpkg.com/buffertools/-/buffertools-2.1.6.tgz#30c19b085636b88df692aeefeea0ff156780e916"
-  integrity sha1-MMGbCFY2uI32kq7v7qD/FWeA6RY=
 
 cache-base@^1.0.1:
   version "1.0.1"
@@ -2339,7 +2333,7 @@ multimatch@^3.0.0:
     arrify "^1.0.1"
     minimatch "^3.0.4"
 
-nan@^2.2.1, nan@^2.9.2:
+nan@^2.7.0, nan@^2.9.2:
   version "2.13.2"
   resolved "https://registry.yarnpkg.com/nan/-/nan-2.13.2.tgz#f51dc7ae66ba7d5d55e1e6d4d8092e802c9aefe7"
   integrity sha512-TghvYc72wlMGMVMluVo9WRJc0mB8KxxF/gZ4YYFy7V2ZQX9l7rgbPg7vjS9mt6U5HXODVFVI2bOduCzwOMv/lw==
